@@ -1,69 +1,91 @@
 .container {
-    max-width: 60%;
-    margin: 0 auto;
-    padding: 20px;
+    /* Efecto de cristal */
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    border-radius: 16px; /* Bordes redondeados */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    color: white;
 }
 
-
 h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 form {
     display: flex;
-    margin-bottom: 20px;
+    gap: 10px; /* Espacio entre input y botón */
+    margin-bottom: 2rem;
 }
 
 input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+input[type="text"]:focus {
+    transform: scale(1.02); /* Pequeña animación al enfocar */
 }
 
 button {
     padding: 10px 20px;
-    background-color: rgb(40, 97, 163);
-    color: white;
+    border-radius: 25px;
     border: none;
-    border: 4px;
+    background: #2b32b2; /* Color base */
+    background: linear-gradient(to right, #2b32b2, #1488cc); /* Degradado en el botón */
+    color: white;
+    font-weight: bold;
     cursor: pointer;
-    transition: 1s all ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background-color: rgb(83, 151, 230);
+    transform: translateY(-2px); /* Se eleva al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Estilos para la información del clima */
 h2 {
-    font-size: 30px;
-}
-
-h1,h2{
-    color: white;
-}
-
-p {
-    margin-bottom: 5px;
-    color: white;
-}
-
-img{
-    width: 100px;
-    height: auto;
+    font-size: 1.8rem;
+    margin: 0;
     margin-top: 10px;
 }
 
-@media (max-width:900px){
-    .container{
-        max-width: 80%;
-    }
+/* Selector específico para la temperatura (el primer párrafo del div de resultados) */
+div > p:first-of-type {
+    font-size: 3rem; /* Temperatura grande */
+    font-weight: 700;
+    margin: 0;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
 
-    h1{
-        font-size: 35px;
-    }
-    h2{
-        font-size: 25px;
-    }
+/* Descripción del clima */
+div > p:last-of-type {
+    font-size: 1.2rem;
+    text-transform: capitalize; /* Primera letra mayúscula */
+    margin-top: -5px;
+    opacity: 0.9;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* Resplandor detrás del icono */
 }
