@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './WheaterApp.css'
+import './WeatherApp.css'
 
 export const WeatherApp = () => {
 
